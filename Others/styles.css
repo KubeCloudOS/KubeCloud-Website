@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #2a0768;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+    background: #ff6600;
+    border-radius: 5px;
+}
+
+header .contact-button a {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero {
+    background: #4a148c;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero .container h1 {
+    font-size: 2.5em;
+}
+
+.content {
+    padding: 40px 0;
+}
+
+.content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.content .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.content .benefits li {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.content .benefits li img {
+    margin-right: 10px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grid-item {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.grid-item img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.grid-item h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    margin-bottom: 20px;
+}
+
+.grid-item .button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+blockquote {
+    background: #4a148c;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+blockquote p {
+    margin-bottom: 10px;
+}
+
+.business-planning {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.business-planning img {
+    max-width: 100%;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.business-planning h3 {
+    flex: 2;
+}
+
+.business-planning p {
+    flex: 2;
+}
+
+.business-planning .button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    flex: 1;
+}
+
+footer {
+    background: #2a0768;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+footer .footer-section h4 {
+    margin-bottom: 10px;
+}
+
+footer .footer-section ul {
+    list-style: none;
+}
+
+footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-section p {
+    margin-bottom: 10px;
+}
+
+footer .footer-section strong {
+    display: block;
+}
