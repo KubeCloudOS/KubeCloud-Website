@@ -90,7 +90,7 @@
                 query: document.getElementById('query').value,
             };
 
-            fetch('tcp://0.tcp.in.ngrok.io:16410/send-email', {
+            fetch('http://localhost:3000/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

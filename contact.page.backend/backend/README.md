@@ -10,6 +10,8 @@ Certainly! Here is the modified backend code that uses your SMTP server (`smtp.m
 mkdir backend
 cd backend
 npm init -y
+npm install dotenv
+
 ```
 
 4. Install the necessary dependencies:

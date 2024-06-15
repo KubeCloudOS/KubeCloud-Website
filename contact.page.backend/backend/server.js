@@ -1,6 +1,9 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -8,26 +11,25 @@ const port = 3000;
 const cors = require('cors');
 app.use(cors());
 
-
 app.use(bodyParser.json());
 
 app.post('/send-email', async (req, res) => {
     const { name, email, phone, query } = req.body;
 
     let transporter = nodemailer.createTransport({
-        host: 'test.test.com',
-        port: 2048,
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         auth: {
-            user: 'test',
-            pass: 'test'
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
         }
     });
 
     let mailOptions = {
-        from: 'mcsam@mcsam.in', // Update to the appropriate sender email
-        to: 'your-email@gmail.com', // Update to your receiving email
-        subject: 'New Contact Form Submission',
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nQuery: ${query}`
+        from: process.env.MAIL_FROM,
+        to: process.env.MAIL_TO,
+        subject: process.env.MAIL_SUBJECT,
+        text: `Name: ${name}\nEmail: ${email}\nSubject: ${phone}\nQuery: ${query}`
     };
 
     try {
