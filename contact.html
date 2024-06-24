@@ -133,13 +133,7 @@
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Send Message</button>
                                     </div>
-                                    
-                                    <style>
-                                        .loading {
-                                            cursor: not-allowed;
-                                            opacity: 0.6;
-                                        }
-                                    </style>
+                                 
                                     
                                     <script>
                                         document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -147,7 +141,6 @@
                                     
                                             const submitButton = document.getElementById('submitButton');
                                             submitButton.disabled = true;
-                                            submitButton.classList.add('loading');
                                             submitButton.innerText = 'Sending...';
                                     
                                             const formData = {
@@ -179,7 +172,6 @@
                                             })
                                             .finally(() => {
                                                 submitButton.disabled = false;
-                                                submitButton.classList.remove('loading');
                                                 submitButton.innerText = 'Send Message';
                                             });
                                         });
