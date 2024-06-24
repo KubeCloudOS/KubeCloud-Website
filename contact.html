@@ -131,43 +131,60 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Send Message</button>
                                     </div>
-                                </div>
-                            </form>
-                            <script>
-                                document.getElementById('contactForm').addEventListener('submit', function(event) {
-                                    event.preventDefault();
-
-                                    const formData = {
-                                        name: document.getElementById('name').value,
-                                        email: document.getElementById('email').value,
-                                        phone: document.getElementById('subject').value,
-                                        query: document.getElementById('message').value,
-                                    };
-
-                                    fetch('https://contact-api.kubecloud.in.net', {
-                                        // fetch('https://contact-api.kubecloud.in.net/send-email', {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                        },
-                                        body: JSON.stringify(formData),
-                                    })
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        if (data.success) {
-                                            alert('Your query has been submitted!');
-                                        } else {
-                                            alert('Error! Please Reach Us at admin@kubecloud.in.net');
+                                    
+                                    <style>
+                                        .loading {
+                                            cursor: not-allowed;
+                                            opacity: 0.6;
                                         }
-                                    })
-                                    .catch(error => {
-                                        console.error('Error:', error);
-                                        alert('Error! Please Reach Us at admin@kubecloud.in.net.');
-                                    });
-                                });
-                            </script>
+                                    </style>
+                                    
+                                    <script>
+                                        document.getElementById('contactForm').addEventListener('submit', function(event) {
+                                            event.preventDefault();
+                                    
+                                            const submitButton = document.getElementById('submitButton');
+                                            submitButton.disabled = true;
+                                            submitButton.classList.add('loading');
+                                            submitButton.innerText = 'Sending...';
+                                    
+                                            const formData = {
+                                                name: document.getElementById('name').value,
+                                                email: document.getElementById('email').value,
+                                                phone: document.getElementById('subject').value,
+                                                query: document.getElementById('message').value,
+                                            };
+                                    
+                                            fetch('https://contact-api.kubecloud.in.net', {
+                                                // fetch('https://contact-api.kubecloud.in.net/send-email', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json',
+                                                },
+                                                body: JSON.stringify(formData),
+                                            })
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                if (data.success) {
+                                                    alert('Your query has been submitted!');
+                                                } else {
+                                                    alert('Error! Please Reach Us at admin@kubecloud.in.net');
+                                                }
+                                            })
+                                            .catch(error => {
+                                                console.error('Error:', error);
+                                                alert('Error! Please Reach Us at admin@kubecloud.in.net.');
+                                            })
+                                            .finally(() => {
+                                                submitButton.disabled = false;
+                                                submitButton.classList.remove('loading');
+                                                submitButton.innerText = 'Send Message';
+                                            });
+                                        });
+                                    </script>
+                                    
                         </div>
                     </div>
                 </div>
